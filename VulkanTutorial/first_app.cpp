@@ -26,7 +26,7 @@ namespace lve {
 		vkDeviceWaitIdle(lveDevice.device());
 	}
 
-	void FirstApp::sierpinski(std::vector<LveModel::Vertex>& vertices, int depth, glm::vec2 left, glm::vec2 right, glm::vec2 top) {
+	/*void FirstApp::sierpinski(std::vector<LveModel::Vertex>& vertices, int depth, glm::vec2 left, glm::vec2 right, glm::vec2 top) {
 		if (depth <= 0) {
 			vertices.push_back({ top });
 			vertices.push_back({ right });
@@ -40,12 +40,16 @@ namespace lve {
 			sierpinski(vertices, depth - 1, leftRight, right, rightTop);
 			sierpinski(vertices, depth - 1, leftTop, rightTop, top);
 		}
-	}
+	}*/
 
 	void FirstApp::loadModels() {
-		std::vector<LveModel::Vertex> vertices{};
+		std::vector<LveModel::Vertex> vertices{
+			{{ 0.0f, -0.5f }, {1.0f, 0.0f, 0.0f}},
+			{{ 0.5f, 0.5f }, {0.0f, 1.0f, 0.0f}},
+			{{ -0.5f, 0.5f }, {0.0f, 0.0f, 1.0f}}
+		};
 
-		sierpinski(vertices, 4, { -0.5f, 0.5f }, { 0.5f, 0.5f }, { 0.0f, -0.5f });
+		//sierpinski(vertices, 4, { -0.5f, 0.5f }, { 0.5f, 0.5f }, { 0.0f, -0.5f });
 
 		lveModel = std::make_unique<LveModel>(lveDevice, vertices);
 	}
