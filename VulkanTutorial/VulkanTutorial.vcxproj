@@ -72,15 +72,31 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,6 +113,17 @@
       <AdditionalLibraryDirectories>$(ProjectDir)\libraries\GLFW\lib-vc2019;$(ProjectDir)\libraries\Vulkan\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>call "compile.bat"</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>call "compile.bat"</Command>
+      <Message>compile shaders</Message>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+      <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -117,6 +144,17 @@
       <AdditionalLibraryDirectories>$(ProjectDir)\libraries\GLFW\lib-vc2019;$(ProjectDir)\libraries\Vulkan\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>call "compile.bat"</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>call "compile.bat"</Command>
+      <Message>compile shaders</Message>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+      <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -133,6 +171,17 @@
       <AdditionalLibraryDirectories>$(ProjectDir)\libraries\GLFW\lib-vc2019;$(ProjectDir)\libraries\Vulkan\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>call "compile.bat"</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>call "compile.bat"</Command>
+      <Message>compile shaders</Message>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+      <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -153,9 +202,21 @@
       <AdditionalLibraryDirectories>$(ProjectDir)\libraries\GLFW\lib-vc2019;$(ProjectDir)\libraries\Vulkan\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>call "compile.bat"</Command>
+    </PreBuildEvent>
+    <CustomBuildStep>
+      <Command>call "compile.bat"</Command>
+      <Message>compile shaders</Message>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+      <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="first_app.cpp" />
+    <ClCompile Include="lve_model.cpp" />
     <ClCompile Include="lve_pipeline.cpp" />
     <ClCompile Include="lve_window.cpp" />
     <ClCompile Include="main.cpp" />
@@ -164,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first_app.hpp" />
+    <ClInclude Include="lve_model.hpp" />
     <ClInclude Include="lve_pipeline.hpp" />
     <ClInclude Include="lve_window.hpp" />
     <ClInclude Include="lve_device.hpp" />
@@ -172,9 +234,7 @@
   <ItemGroup>
     <None Include="compile.bat" />
     <None Include="shaders\simple_shader.frag" />
-    <None Include="shaders\simple_shader.frag.spv" />
     <None Include="shaders\simple_shader.vert" />
-    <None Include="shaders\simple_shader.vert.spv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

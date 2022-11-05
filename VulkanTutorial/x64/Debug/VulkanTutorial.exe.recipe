@@ -5,7 +5,14 @@
       <FullPath>C:\dev\Projects\Vulkan learn\VulkanTutorial\x64\Debug\VulkanTutorial.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\dev\Projects\Vulkan learn\VulkanTutorial\VulkanTutorial\shaders\simple_shader.frag.spv</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\dev\Projects\Vulkan learn\VulkanTutorial\VulkanTutorial\shaders\simple_shader.vert.spv</FullPath>
+    </ContentFile>
+  </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>
