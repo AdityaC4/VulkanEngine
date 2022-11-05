@@ -74,29 +74,25 @@
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
-    <CustomBuildBeforeTargets>
-    </CustomBuildBeforeTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
-    <CustomBuildBeforeTargets>
-    </CustomBuildBeforeTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
-    <CustomBuildBeforeTargets>
-    </CustomBuildBeforeTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
-    <CustomBuildBeforeTargets>
-    </CustomBuildBeforeTargets>
+    <CustomBuildBeforeTargets>ClCompile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -121,8 +117,7 @@
       <Message>compile shaders</Message>
       <TreatOutputAsContent>true</TreatOutputAsContent>
       <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
-      <Inputs>
-      </Inputs>
+      <Inputs>$(ProjectDir)shaders</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -152,8 +147,7 @@
       <Message>compile shaders</Message>
       <TreatOutputAsContent>true</TreatOutputAsContent>
       <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
-      <Inputs>
-      </Inputs>
+      <Inputs>$(ProjectDir)shaders</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -179,8 +173,7 @@
       <Message>compile shaders</Message>
       <TreatOutputAsContent>true</TreatOutputAsContent>
       <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
-      <Inputs>
-      </Inputs>
+      <Inputs>$(ProjectDir)shaders</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -210,8 +203,7 @@
       <Message>compile shaders</Message>
       <TreatOutputAsContent>true</TreatOutputAsContent>
       <Outputs>$(ProjectDir)shaders\simple_shader.frag.spv; $(ProjectDir)shaders\simple_shader.vert.spv; </Outputs>
-      <Inputs>
-      </Inputs>
+      <Inputs>$(ProjectDir)shaders</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
