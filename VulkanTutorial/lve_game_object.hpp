@@ -22,6 +22,8 @@ namespace lve {
 		}
 	};
 
+	
+
 	class LveGameObject {
 	public:
 		using id_t = unsigned int;
